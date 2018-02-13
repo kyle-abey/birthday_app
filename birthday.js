@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 var button2 = document.getElementById('button3')
         var month = this.birthdate.getMonth() + 1;
         var day = this.birthdate.getDate() + 1;
