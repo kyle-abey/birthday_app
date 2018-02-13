@@ -5,7 +5,7 @@
 
 
 
-var button2 = document.getElementById('button3')
+var button2 = document.getElementById('button2')
         var month = this.birthdate.getMonth() + 1;
         var day = this.birthdate.getDate() + 1;
         if ((month == 1 && day <= 20) || (month == 12 && day >= 22)) {
