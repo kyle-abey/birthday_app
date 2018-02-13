@@ -1,4 +1,4 @@
- this.getSign = function () {
+var button2 = document.getElementById('button3')
         var month = this.birthdate.getMonth() + 1;
         var day = this.birthdate.getDate() + 1;
         if ((month == 1 && day <= 20) || (month == 12 && day >= 22)) {
@@ -26,4 +26,3 @@
             } else if ((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
                 return "Your sign is Sagittarius";
             }
-    }
