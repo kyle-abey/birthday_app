@@ -3,21 +3,19 @@ var button = document.getElementById('button1');
 function displayAge() {
     var input = document.getElementById('textbox');
     var bday = input.getDate();
-    this.age = function () {
             var today = new Date();
             var time = (today.getTime() - this.birthdate.getTime());
             var age = Math.floor((today.getTime() - Math.floor(this.birthdate.getTime())) / (1000 * 60 * 60 * 24 * 365));
-            return "You are "
-            age " years old."
-
+            document.getElementById('submit1').textContent = "You are " age " years old."
+}
             button.addEventListener('click', displayAge);
 
 
 
 
 
-//////////
-        //////////
+            //////////
+            //////////
 
             var button2 = document.getElementById('textbox')
             var month = this.birthdate.getMonth() + 1;
