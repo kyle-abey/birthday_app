@@ -1,28 +1,28 @@
-
-
 var button = document.getElementById('button1');
-function displayAge(){
+
+function displayAge() {
     var input = document.getElementById('inputBday');
     var bday = input.getDate();
     this.age = function () {
-        var today = new Date();
-        var time = (today.getTime() - this.birthdate.getTime());
-        var age = Math.floor((today.getTime() - Math.floor(this.birthdate.getTime())) / (1000 * 60 * 60 * 24 * 365));
-        return "You are " age " years old."
+            var today = new Date();
+            var time = (today.getTime() - this.birthdate.getTime());
+            var age = Math.floor((today.getTime() - Math.floor(this.birthdate.getTime())) / (1000 * 60 * 60 * 24 * 365));
+            return "You are "
+            age " years old."
 
-button.addEventListener('click', displayAge);
-
->>>>>>> origin/master
-
+            button.addEventListener('click', displayAge);
 
 
 
 
 
-var button2 = document.getElementById('button2')
-        var month = this.birthdate.getMonth() + 1;
-        var day = this.birthdate.getDate() + 1;
-        if ((month == 1 && day <= 20) || (month == 12 && day >= 22)) {
+//////////
+        //////////
+
+            var button2 = document.getElementById('button2')
+            var month = this.birthdate.getMonth() + 1;
+            var day = this.birthdate.getDate() + 1;
+            if ((month == 1 && day <= 20) || (month == 12 && day >= 22)) {
                 return "Your sign is Capricorn";
             } else if ((month == 1 && day >= 21) || (month == 2 && day <= 18)) {
                 return "Your sign is Aquarius";
@@ -47,4 +47,3 @@ var button2 = document.getElementById('button2')
             } else if ((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
                 return "Your sign is Sagittarius";
             }
-
