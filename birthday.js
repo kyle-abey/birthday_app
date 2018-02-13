@@ -16,7 +16,9 @@ button.addEventListener('click', displayAge);
 
 
 
-var button2 = document.getElementById('button2')
+var button2 = document.getElementById('button2');
+function displayAstrologicalSign() {
+        var element = document.getElementById('????????');
         var month = this.birthdate.getMonth() + 1;
         var day = this.birthdate.getDate() + 1;
         if ((month == 1 && day <= 20) || (month == 12 && day >= 22)) {
@@ -44,3 +46,5 @@ var button2 = document.getElementById('button2')
             } else if ((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
                 return "Your sign is Sagittarius";
             }
+    button.addEventListener('click', displayAstrologicalSign);
+}
