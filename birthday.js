@@ -1,4 +1,4 @@
-var button = document.getElementById('displayAge');
+var button = document.getElementById('button1');
 function displayAge(){
     var input = document.getElementById('inputBday');
     var bday = input.getDate();
