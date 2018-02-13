@@ -1,7 +1,7 @@
 var button = document.getElementById('button1');
 
 function displayAge() {
-    var input = document.getElementById('inputBday');
+    var input = document.getElementById('textbox');
     var bday = input.getDate();
     this.age = function () {
             var today = new Date();
