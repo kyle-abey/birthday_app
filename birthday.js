@@ -68,3 +68,16 @@ function displaySign() {
         return "Your sign is Sagittarius";
     }
 }
+
+function errorMessage() {
+ var input = document.getElementById("textbox").value;
+ var date = new Date(input);
+if (isNaN(input.getTime())) {
+    return "Your date is invalid. Please use an actual date in mm/dd/yyyy format."
+} else if (input.length !== 10) {
+    return "Your date is invalid. Please use an actual date in mm/dd/yyyy format."
+
+
+}
+
+}
