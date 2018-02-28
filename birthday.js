@@ -31,8 +31,15 @@ function daysUntilBDay(birthday) {
 
 
 
+var button2 = document.getElementById("button2");
+button1.addEventListener("click", () => {
+    document.getElementById("submit2").textContent = displaySign();
+
+});
+
+
 function displaySign() {
-    var button2 = document.getElementById('textbox')
+    var button2 = document.getElementById('submit2')
     var month = this.birthdate.getMonth() + 1;
     var day = this.birthdate.getDate() + 1;
     if ((month == 1 && day <= 20) || (month == 12 && day >= 22)) {
