@@ -14,13 +14,22 @@ function displayAge() {
 }
 
 
+if ( isNaN(d.getTime())) {
+
+}
 
 
-var button2 = document.getElementById("Astrological Sign");
-button2.addEventListener("click", () => {
-    document.getElementById("output").textContent = displaySign();
 
-});
+
+
+function daysUntilBDay(birthday) {
+    var bDay = new Date(birthday);
+    var today = new Date();
+    var days = Math.floor((bDay.getTime() - today.getTime()) / 1000 / 60 / 60 / 24 / 24);
+    return days;
+}
+
+
 
 function displaySign() {
     var button2 = document.getElementById('textbox')
@@ -51,13 +60,4 @@ function displaySign() {
     } else if ((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
         return "Your sign is Sagittarius";
     }
-}
-
-
-
-function daysUntilBDay(birthday) {
-    var bDay = new Date(birthday);
-    var today = new Date();
-    var days = Math.floor((bDay.getTime() - today.getTime()) / 1000 / 60 / 60 / 24 / 24);
-    return days;
 }
