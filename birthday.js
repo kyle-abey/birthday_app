@@ -16,7 +16,11 @@ function displayAge() {
 
 
 
-var button2 = document.getElementById("Astrological Sign")
+var button2 = document.getElementById("Astrological Sign");
+button2.addEventListener("click", () => {
+    document.getElementById("output").textContent = displaySign();
+
+});
 
 function displaySign() {
     var button2 = document.getElementById('textbox')
