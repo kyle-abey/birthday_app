@@ -1,14 +1,16 @@
-var button1 = document.getElementById('giveAge');
-button1.addEventListener('click', () => {
-    document.getElementById("submit1").textContent = displayAge()
+var button1 = document.getElementById("giveAge");
+button1.addEventListener("click", () => {
+    document.getElementById("output").textContent = displayAge();
+
 });
 
+
 function displayAge() {
-    var input = document.getElementById('textbox').value;
-    var bday = input.getDate();
+    var input = document.getElementById("textbox").value;
+    var bday = new Date(input);
     var today = new Date();
     var age = Math.floor((today.getTime() - Math.floor(bday.getTime())) / (1000 * 60 * 60 * 24 * 365));
-    document.getElementById('submit1').textContent = "You are " + age + " years old.";
+    return "You are " + age + " years old.";
 }
 
 
