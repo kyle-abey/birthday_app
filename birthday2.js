@@ -7,12 +7,26 @@ function calculateAge(bday) {
     return age;
 }
 
-function daysUntilBDay(birthday) {
-    var bDay = new Date(birthday);
+function countdown() {
+    var input = new Date(document.getElementById('inputNum').value);
     var today = new Date();
-    var days = Math.floor((bDay.getTime() - today.getTime()) / 1000 / 60 / 60 / 24 / 24);
-    return days;
+    input.setFullYear(today.getFullYear());
+    var inputDay = input.getTime();
+    var presentDay = today.getTime();
+    if (inputDay > presentDay) {
+        var days = Math.floor((inputDay / 86400000) - (presentDay / 86400000));
+        document.getElementById('submit3').textContent = days + 1;
+    }
+    if (presentDay > inputDay) {
+        input.setFullYear(input.getFullYear() + 1);
+        var days2 = Math.floor((presentDay / 86400000) - (input / 86400000));
+        document.getElementById('submit3').textContent = days2 * -1;
+    }
 }
+
+
+
+button.addEventListener('click', countdown);
 
 function getSign(birthdate) {
     var month = birthdate.getMonth() + 1;
