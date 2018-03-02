@@ -14,11 +14,6 @@ function displayAge() {
 }
 
 
-if ( isNaN(d.getTime())) {
-
-}
-
-
 
 
 
