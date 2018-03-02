@@ -23,7 +23,6 @@ function countdown() {
         document.getElementById('submit3').textContent = days2 * -1;
     }
 }
-button.addEventListener('click', countdown);
 
 function getSign(birthdate) {
     var month = birthdate.getMonth() + 1;
