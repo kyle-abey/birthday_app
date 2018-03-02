@@ -56,8 +56,6 @@ function checkFormat() {
     } else {
         return "true"
     }
-
-
 }
 
 function displayBirthdayMessage() {
