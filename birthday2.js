@@ -18,29 +18,29 @@ function getSign(birthdate) {
     var month = birthdate.getMonth() + 1;
     var day = birthdate.getDate() + 1;
     if ((month == 1 && day <= 20) || (month == 12 && day >= 22)) {
-        return "Capricorn";
+        return "Capricorn,";
     } else if ((month == 1 && day >= 21) || (month == 2 && day <= 18)) {
-        return "Aquarius";
+        return "Aquarius,";
     } else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
-        return "Pisces";
+        return "Pisces,";
     } else if ((month == 3 && day >= 21) || (month == 4 && day <= 20)) {
-        return "Aries";
+        return "Aries,";
     } else if ((month == 4 && day >= 21) || (month == 5 && day <= 20)) {
-        return "Taurus";
+        return "Taurus,";
     } else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
-        return "Gemini";
+        return "Gemini,";
     } else if ((month == 6 && day >= 22) || (month == 7 && day <= 22)) {
-        return "Cancer";
+        return "Cancer,";
     } else if ((month == 7 && day >= 23) || (month == 8 && day <= 23)) {
-        return "Leo";
+        return "Leo,";
     } else if ((month == 8 && day >= 24) || (month == 9 && day <= 23)) {
-        return "Virgo";
+        return "Virgo,";
     } else if ((month == 9 && day >= 24) || (month == 10 && day <= 23)) {
-        return "Libra";
+        return "Libra,";
     } else if ((month == 10 && day >= 24) || (month == 11 && day <= 22)) {
-        return "Scorpio";
+        return "Scorpio,";
     } else if ((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
-        return "Sagittarius";
+        return "Sagittarius,";
     }
 }
 
@@ -50,6 +50,6 @@ function displayBirthdayMessage() {
     var age = calculateAge(date);
     var sign = getSign(date);
     var number = daysUntilBDay(date);
-    var message = "You are " + age + " years old, your sign is, " + sign + " and there are" + number + " days until your birthday!";
+    var message = "You are " + age + " years old, your sign is " + sign + " and there are" + number + " days until your birthday!";
     document.getElementById("result").textContent = message;
 }
