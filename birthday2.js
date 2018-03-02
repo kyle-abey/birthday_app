@@ -7,11 +7,21 @@ function calculateAge(bday) {
     return age;
 }
 
-function daysUntilBDay(birthday) {
-    var bDay = new Date(birthday);
+function countdown() {
+    var input = new Date(document.getElementById('textbox').value);
     var today = new Date();
-    var days = Math.floor((bDay.getTime() - today.getTime()) / 1000 / 60 / 60 / 24 / 24);
-    return days;
+    input.setFullYear(today.getFullYear());
+    var inputDay = input.getTime();
+    var presentDay = today.getTime();
+    if (inputDay > presentDay) {
+        var days = Math.floor((inputDay / 86400000) - (presentDay / 86400000));
+        document.getElementById('submit3').textContent = days + 1;
+    }
+    if (presentDay > inputDay) {
+        input.setFullYear(input.getFullYear() + 1);
+        var days2 = Math.floor((presentDay / 86400000) - (input / 86400000));
+        document.getElementById('submit3').textContent = days2 * -1;
+    }
 }
 
 function getSign(birthdate) {
@@ -56,8 +66,6 @@ function checkFormat() {
     } else {
         return false
     }
-
-
 }
 
 function displayBirthdayMessage() {
@@ -67,6 +75,7 @@ function displayBirthdayMessage() {
     var sign = getSign(date);
     var number = daysUntilBDay(date);
     var errorMessage = "You have entered an invalid date. Please input a valid date in mm/dd/yyyy format!"
+    var number = countdown(date);
     var message = "You are " + age + " years old, your sign is " + sign + " and there are" + number + " days until your birthday!";
     if (checkFormat(date) == false) {
         document.getElementById("result").textContent = errorMessage;
