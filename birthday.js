@@ -14,11 +14,6 @@ function displayAge() {
 }
 
 
-if ( isNaN(d.getTime())) {
-
-}
-
-
 
 
 
@@ -67,4 +62,17 @@ function displaySign() {
     } else if ((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
         return "Your sign is Sagittarius";
     }
+}
+
+function errorMessage() {
+ var input = document.getElementById("textbox").value;
+ var date = new Date(input);
+if (isNaN(input.getTime())) {
+    return "Your date is invalid. Please use an actual date in mm/dd/yyyy format."
+} else if (input.length !== 10) {
+    return "Your date is invalid. Please use an actual date in mm/dd/yyyy format."
+
+
+}
+
 }
