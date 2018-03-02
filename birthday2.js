@@ -8,7 +8,7 @@ function calculateAge(bday) {
 }
 
 function countdown() {
-    var input = new Date(document.getElementById('inputNum').value);
+    var input = new Date(document.getElementById('textbox').value);
     var today = new Date();
     input.setFullYear(today.getFullYear());
     var inputDay = input.getTime();
@@ -23,9 +23,6 @@ function countdown() {
         document.getElementById('submit3').textContent = days2 * -1;
     }
 }
-
-
-
 button.addEventListener('click', countdown);
 
 function getSign(birthdate) {
