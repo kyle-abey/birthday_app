@@ -39,7 +39,7 @@ button1.addEventListener("click", () => {
 
 
 function displaySign() {
-    var button2 = document.getElementById('submit2')
+    var input = document.getElementById("textbox").value;
     var month = this.birthdate.getMonth() + 1;
     var day = this.birthdate.getDate() + 1;
     if ((month == 1 && day <= 20) || (month == 12 && day >= 22)) {
