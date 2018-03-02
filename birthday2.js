@@ -73,7 +73,7 @@ function displayBirthdayMessage() {
     var date = new Date(input);
     var age = calculateAge(date);
     var sign = getSign(date);
-    var number = daysUntilBDay(date);
+    var number = countdown(date);
     var errorMessage = "You have entered an invalid date. Please input a valid date in mm/dd/yyyy format!"
     var number = countdown(date);
     var message = "You are " + age + " years old, your sign is " + sign + " and there are" + number + " days until your birthday!";
