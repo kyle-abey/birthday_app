@@ -44,6 +44,22 @@ function getSign(birthdate) {
     }
 }
 
+function checkFormat() {
+    var input = document.getElementById("textbox").value;
+    var date = new Date(input);
+    var slash1 = input.substring(2, 3);
+    var slash2 = input.subsring(5, 6);
+    if (isNaN(input.getTime())) {
+        return "false"
+    } else if (slash1 !== "/" || slash2 !== "/" || input.length !== 10) {
+        return "false"
+    } else {
+        return "true"
+    }
+
+
+}
+
 function displayBirthdayMessage() {
     var input = document.getElementById("textbox").value;
     var date = new Date(input);
