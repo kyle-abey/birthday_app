@@ -48,13 +48,13 @@ function checkFormat() {
     var input = document.getElementById("textbox").value;
     var date = new Date(input);
     var slash1 = input.substring(2, 3);
-    var slash2 = input.subsring(5, 6);
-    if (isNaN(input.getTime())) {
-        return "false"
-    } else if (slash1 !== "/" || slash2 !== "/" || input.length !== 10) {
-        return "false"
+    var slash2 = input.substring(5, 6);
+    if (isNaN(date) == false) {
+        return true
+    } else if (slash1 == "/" && slash2 == "/" && input.length == 10) {
+        return true
     } else {
-        return "true"
+        return false
     }
 
 
@@ -66,6 +66,11 @@ function displayBirthdayMessage() {
     var age = calculateAge(date);
     var sign = getSign(date);
     var number = daysUntilBDay(date);
+    var errorMessage = "You have entered an invalid date. Please input a valid date in mm/dd/yyyy format!"
     var message = "You are " + age + " years old, your sign is " + sign + " and there are" + number + " days until your birthday!";
-    document.getElementById("result").textContent = message;
+    if (checkFormat(date) == false) {
+        document.getElementById("result").textContent = errorMessage;
+    } else {
+        document.getElementById("result").textContent = message;
+    }
 }
