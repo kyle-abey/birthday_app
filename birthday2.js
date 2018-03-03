@@ -1,5 +1,5 @@
 var button1 = document.getElementById("getMessage");
-button1.addEventListener("click", displayBirthdayMessage);
+button1.addEventListener("click", checkFormat);
 
 function calculateAge(bday) {
     var today = new Date();
@@ -15,12 +15,11 @@ function countdown() {
     var presentDay = today.getTime();
     if (inputDay > presentDay) {
         var days = Math.floor((inputDay / 86400000) - (presentDay / 86400000));
-        document.getElementById('submit3').textContent = days + 1;
-    }
-    if (presentDay > inputDay) {
+        return days + 1;
+    } else if (presentDay > inputDay) {
         input.setFullYear(input.getFullYear() + 1);
         var days2 = Math.floor((presentDay / 86400000) - (input / 86400000));
-        document.getElementById('submit3').textContent = days2 * -1;
+        return days2 * -1;
     }
 }
 
@@ -57,14 +56,18 @@ function getSign(birthdate) {
 function checkFormat() {
     var input = document.getElementById("textbox").value;
     var date = new Date(input);
+    var today = new Date();
     var slash1 = input.substring(2, 3);
     var slash2 = input.substring(5, 6);
-    if (isNaN(date) == false) {
-        return true
+    var error = "You have entered an invalid date. Please input a valid date in mm/dd/yyyy format!";
+    if (isNaN(date) == true) {
+        document.getElementById("output").textContent = error;
+    } else if (today.getTime() <= date.getTime()) {
+        document.getElementById("output").textContent = error;
     } else if (slash1 == "/" && slash2 == "/" && input.length == 10) {
-        return true
+        return displayBirthdayMessage();
     } else {
-        return false
+        document.getElementById("output").textContent = error;
     }
 }
 
@@ -74,12 +77,6 @@ function displayBirthdayMessage() {
     var age = calculateAge(date);
     var sign = getSign(date);
     var number = countdown(date);
-    var errorMessage = "You have entered an invalid date. Please input a valid date in mm/dd/yyyy format!"
-    var number = countdown(date);
-    var message = "You are " + age + " years old, your sign is " + sign + " and there are" + number + " days until your birthday!";
-    if (checkFormat(date) == false) {
-        document.getElementById("result").textContent = errorMessage;
-    } else {
-        document.getElementById("result").textContent = message;
-    }
+    var message = "You are " + age + " years old, your sign is " + sign + " and there are " + number + " days until your birthday!";
+    document.getElementById("output").textContent = message;
 }
