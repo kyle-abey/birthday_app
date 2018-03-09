@@ -60,7 +60,6 @@ function checkFormat() {
     var slash1 = input.substring(2, 3);
     var slash2 = input.substring(5, 6);
     var error = "You have entered an invalid date. Please input a valid date in mm/dd/yyyy format!";
-    var futureError = "You weren't born in the future. Please input a valid date in mm/dd/yyyy format!"
     if (isNaN(date) == true) {
         document.getElementById("output").textContent = error;
     } else if (today.getTime() <= date.getTime()) {
